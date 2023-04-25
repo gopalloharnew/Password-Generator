@@ -29,7 +29,7 @@ body {
   border-radius: var(--radius-primary);
 }
 
-.password-display {
+.password-display-wraper {
   margin: var(--spacing-primary) 0rem;
   padding: var(--spacing-primary);
   background-color: var(--clr-primary);
@@ -38,6 +38,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.password-display {
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .password-generator-form {

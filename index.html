@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generator</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/script.js" defer></script>
+    <script src="js/script.js" type="module"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,8 +17,8 @@
   <body>
     <div class="wraper">
       <h1 class="title">Password Generator</h1>
-      <div class="password-display">
-        <span class="password"> This21$*() </span>
+      <div class="password-display-wraper">
+        <span class="password-display"> This21$*() </span>
         <button class="copy-password-button">Copy</button>
       </div>
       <form class="password-generator-form">
@@ -34,14 +34,23 @@
           />
           <button class="increase-character-amount">+</button>
         </div>
+
+        <label for="includeLowercase">Include Lowercase</label>
+        <input
+          type="checkbox"
+          class="include-checkbox"
+          id="includeLowercase"
+          checked
+        />
+
         <label for="includeUppercase">Include Uppercase</label>
-        <input type="checkbox" id="includeUppercase" />
+        <input type="checkbox" class="include-checkbox" id="includeUppercase" />
 
         <label for="includeNumbers">Include Numbers</label>
-        <input type="checkbox" id="includeNumbers" />
+        <input type="checkbox" class="include-checkbox" id="includeNumbers" />
 
         <label for="includeSymbols">Include Symbols</label>
-        <input type="checkbox" id="includeSymbols" />
+        <input type="checkbox" class="include-checkbox" id="includeSymbols" />
 
         <button type="submit" class="generate-password-button">
           Generate Password
