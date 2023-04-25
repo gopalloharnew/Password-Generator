@@ -7,6 +7,46 @@
     <title>Password Generator</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <div class="wraper">
+      <h1 class="title">Password Generator</h1>
+      <div class="password-display">
+        <span class="password"> This21$*() </span>
+        <button class="copy-password-button">Copy</button>
+      </div>
+      <form class="password-generator-form">
+        <div class="character-amount-wraper">
+          <button class="decrease-character-amount">-</button>
+          <input
+            type="number"
+            class="character-amount-input"
+            min="1"
+            max="50"
+            step="1"
+            value="10"
+          />
+          <button class="increase-character-amount">+</button>
+        </div>
+        <label for="includeUppercase">Include Uppercase</label>
+        <input type="checkbox" id="includeUppercase" />
+
+        <label for="includeNumbers">Include Numbers</label>
+        <input type="checkbox" id="includeNumbers" />
+
+        <label for="includeSymbols">Include Symbols</label>
+        <input type="checkbox" id="includeSymbols" />
+
+        <button type="submit" class="generate-password-button">
+          Generate Password
+        </button>
+      </form>
+    </div>
+  </body>
 </html>

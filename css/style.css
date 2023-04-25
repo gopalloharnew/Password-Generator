@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --bg-primary: hsl(214, 18%, 15%);
+  --bg-secondary: hsl(318, 49%, 38%);
+  --bg-secondary-light: hsl(335, 54%, 57%);
+  --clr-primary: hsl(0, 2%, 91%);
+  --font-primary: "Fira Sans", sans-serif;
+  --spacing-primary: 1rem;
+  --radius-primary: 0.25rem;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--clr-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  font-family: var(--font-primary);
+}
+
+.wraper {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-secondary);
+  padding: var(--spacing-primary);
+  border-radius: var(--radius-primary);
+}
+
+.password-display {
+  margin: var(--spacing-primary) 0rem;
+  padding: var(--spacing-primary);
+  background-color: var(--clr-primary);
+  color: var(--bg-primary);
+  border-radius: var(--radius-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.password-generator-form {
+  display: grid;
+  gap: var(--spacing-primary);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.generate-password-button,
+.copy-password-button {
+  all: unset;
+  border: 2px solid transparent;
+  text-align: center;
+  padding: 0.25rem;
+  border-radius: var(--radius-primary);
+  cursor: pointer;
+}
+
+.copy-password-button {
+  background-color: var(--bg-secondary);
+  color: var(--clr-primary);
+}
+
+.generate-password-button {
+  background-color: var(--clr-primary);
+  color: var(--bg-primary);
+  grid-column: span 2;
+}
+
+/* character-amount-wraper */
+.character-amount-wraper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: span 2;
+}
+
+.decrease-character-amount,
+.character-amount-input,
+.increase-character-amount {
+  all: unset;
+  background-color: var(--clr-primary);
+  color: var(--bg-primary);
+  text-align: center;
+  padding: 0.5rem;
+  border: 1px solid white;
+}
+
+.increase-character-amount,
+.decrease-character-amount {
+  cursor: pointer;
+}
+
+/* .character-amount-input {
+} */
+
+.character-amount-input::-webkit-outer-spin-button,
+.character-amount-input::-webkit-inner-spin-button {
+  display: none;
+}
