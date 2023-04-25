@@ -16,6 +16,7 @@ const decreaseCharacterAmountButton = document.querySelector(
 const increaseCharacterAmountButton = document.querySelector(
   ".increase-character-amount"
 );
+const copyPasswordButton = document.querySelector(".copy-password-button");
 
 includeCheckboxes.forEach((includeCheckbox) => {
   includeCheckbox.addEventListener("input", (e) => {
@@ -64,4 +65,21 @@ passwordGeneratorForm.addEventListener("submit", (e) => {
   ).password;
 
   passwordDisplay.textContent = password;
+
+  copyPasswordButton.textContent = "Copy";
+});
+
+copyPasswordButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  let password = passwordDisplay.textContent;
+  let newPasswordDisplay = document.createElement("input");
+  newPasswordDisplay.value = password;
+  newPasswordDisplay.classList.add("hidden");
+  document.body.append(newPasswordDisplay);
+  newPasswordDisplay.select();
+  newPasswordDisplay.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  newPasswordDisplay.remove();
+
+  copyPasswordButton.textContent = "Copied";
 });

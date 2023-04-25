@@ -48,6 +48,7 @@ body {
 }
 
 .password-display {
+  all: unset;
   word-wrap: break-word;
   word-break: break-all;
   padding-right: var(--spacing-primary);
@@ -144,4 +145,12 @@ body {
 .character-amount-input::-webkit-outer-spin-button,
 .character-amount-input::-webkit-inner-spin-button {
   display: none;
+}
+
+.hidden {
+  opacity: 0;
+  z-index: -1;
+  position: fixed;
+  top: -100vh;
+  left: -100vw;
 }
