@@ -9,6 +9,7 @@
   --font-primary: "Fira Sans", sans-serif;
   --spacing-primary: 1rem;
   --radius-primary: 0.25rem;
+  --transition-primary: 0.25s ease-in-out;
 }
 
 body {
@@ -19,6 +20,7 @@ body {
   justify-content: center;
   min-height: 100svh;
   font-family: var(--font-primary);
+  padding: var(--spacing-primary);
 }
 
 .wraper {
@@ -27,6 +29,11 @@ body {
   background-color: var(--bg-secondary);
   padding: var(--spacing-primary);
   border-radius: var(--radius-primary);
+  width: min(23rem, calc(100vw - (2 * var(--spacing-primary))));
+}
+
+.title {
+  text-align: center;
 }
 
 .password-display-wraper {
@@ -43,6 +50,7 @@ body {
 .password-display {
   word-wrap: break-word;
   word-break: break-all;
+  padding-right: var(--spacing-primary);
 }
 
 .password-generator-form {
@@ -64,12 +72,36 @@ body {
 .copy-password-button {
   background-color: var(--bg-secondary);
   color: var(--clr-primary);
+  transition: background-color var(--transition-primary),
+    border-color var(--transition-primary);
+  border: 2px solid transparent;
+}
+
+.copy-password-button:hover {
+  background-color: var(--bg-secondary-light);
+}
+
+.copy-password-button:focus-visible {
+  border-color: var(--bg-primary);
+  background-color: var(--bg-secondary-light);
 }
 
 .generate-password-button {
   background-color: var(--clr-primary);
   color: var(--bg-primary);
   grid-column: span 2;
+  transition: background-color var(--transition-primary),
+    border-color var(--transition-primary);
+  border: 2px solid transparent;
+}
+
+.generate-password-button:hover {
+  background-color: white;
+}
+
+.generate-password-button:focus-visible {
+  background-color: white;
+  border-color: var(--bg-primary);
 }
 
 /* character-amount-wraper */
@@ -94,10 +126,20 @@ body {
 .increase-character-amount,
 .decrease-character-amount {
   cursor: pointer;
+  transition: background-color var(--transition-primary),
+    border-color var(--transition-primary);
 }
 
-/* .character-amount-input {
-} */
+.increase-character-amount:hover,
+.decrease-character-amount:hover {
+  background-color: white;
+}
+
+.increase-character-amount:focus-visible,
+.character-amount-input:focus-visible,
+.decrease-character-amount:focus-visible {
+  border-color: var(--bg-primary);
+}
 
 .character-amount-input::-webkit-outer-spin-button,
 .character-amount-input::-webkit-inner-spin-button {
